@@ -92,5 +92,32 @@ public class ProductServiceImpl implements ProductService {
         return response;
     }
 
+    @Override
+    public Response getProductByCategory(String category) {
+        Response response = new Response();
+        try {
+            response.setStatusCode(200);
+            response.setMessage("All products retrieved successfully");
+            response.setProductList(productRepository.findProductsByCategory(category).stream().map(productMapper::toProductDTO).toList());
+        } catch (Exception e) {
+            response.setStatusCode(400);
+            response.setMessage("Failed to retrieve all products");
+        }
+        return response;
+    }
+
+    @Override
+    public Response getAllCategories() {
+        Response response = new Response();
+        try {
+            response.setStatusCode(200);
+            response.setMessage("All categories retrieved successfully");
+            response.setCategoryList(productRepository.findAllCategories());
+        } catch (Exception e) {
+            response.setStatusCode(400);
+            response.setMessage("Failed to retrieve all categories");
+        }
+        return response;
+    }
 
 }

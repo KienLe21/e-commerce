@@ -10,4 +10,6 @@ public interface ProductService {
     Response deleteProduct(String id);
     Response getProductById(String id);
     Response getAllProducts();
+    Response getProductByCategory(String category);
+    Response getAllCategories();
 }

@@ -23,6 +23,7 @@ public class Product {
     Integer price;
     Integer quantity;
     String color;
+    String category;
 
     @ManyToMany(mappedBy = "products")
     List<Order> orders;

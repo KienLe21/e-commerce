@@ -14,5 +14,6 @@ public class ProductDTO {
     Integer price;
     Integer quantity;
     String color;
+    String category;
 
 }

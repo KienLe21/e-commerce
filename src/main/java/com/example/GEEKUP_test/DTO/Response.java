@@ -23,4 +23,5 @@ public class Response {
     List<DiscountDTO> discountList;
     List<OrderDTO> orderList;
 
+    List<String> categoryList;
 }

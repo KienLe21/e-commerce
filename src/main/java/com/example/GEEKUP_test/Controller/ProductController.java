@@ -45,4 +45,16 @@ public class ProductController {
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
+    @GetMapping("/get-product-by-category/{category}")
+    public ResponseEntity<Response> getProductByCategory(@PathVariable String category) {
+        Response response = productService.getProductByCategory(category);
+        return ResponseEntity.status(response.getStatusCode()).body(response);
+    }
+
+    @GetMapping("/get-all-categories")
+    public ResponseEntity<Response> getAllCategories() {
+        Response response = productService.getAllCategories();
+        return ResponseEntity.status(response.getStatusCode()).body(response);
+    }
+
 }
